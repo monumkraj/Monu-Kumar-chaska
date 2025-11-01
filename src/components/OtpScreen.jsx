@@ -23,7 +23,6 @@ function OtpScreen() {
   const handleVerify = () => {
     const enteredOtp = otp.join("");
     if (enteredOtp === "123456") {
-      // ✅ Navigate to Restaurant List on successful OTP verification
       navigate("/restaurants");
     } else {
       alert("Invalid OTP ❌");

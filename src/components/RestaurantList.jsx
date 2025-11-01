@@ -28,17 +28,15 @@ function RestaurantList() {
       id: 3,
       title: "Healthy Picks",
       description: "Delicious and nutritious meals for a healthy lifestyle.",
-      image:
-        "https://images.unsplash.com/photo-1510626176961-4b37d0b89c4f?q=80&w=1200&auto=format&fit=crop",
-    },
+      image: "https://cdn.dummyjson.com/recipe-images/1.webp",
+      },
      {
       id: 4,
       title: "Veggie Friendly Eateries",
       description: "Explore the best vegetarian options in town.",
-      image:
-        "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1200&auto=format&fit=crop",
-    },
-  ];
+      image: "https://cdn.dummyjson.com/recipe-images/3.webp",
+  },
+];
 
   // 🧠 Fetch nearby restaurant data (Dummy API)
   useEffect(() => {
@@ -154,7 +152,7 @@ function RestaurantList() {
                         src={card.image}
                         alt={card.title}
 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover content-fit"
                       />
                     </div>
                   </div>

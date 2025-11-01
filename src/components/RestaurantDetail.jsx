@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 
 function RestaurantDetail() {
   const location = useLocation();
@@ -32,9 +31,9 @@ function RestaurantDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-w flex flex-col">
+    <div className="min-h-screen bg-w flex flex-col max-w-sm justify-center mx-auto shadow-md rounded-md overflow-hidden">
       {/*  Top Half - Image Section */}
-      <div className="relative w-full h-1/2">
+      <div className="relative w-full">
         {/* Back button */}
         <button
           onClick={() => navigate(-1)}
@@ -46,7 +45,7 @@ function RestaurantDetail() {
         <img
           src={data.image}
           alt={data.name}
-          className="w-full h-full object-cover"
+          className="w-full h-[30vw] object-cover"
         />
 
         {/* Fastor logo overlay */}
@@ -58,19 +57,19 @@ function RestaurantDetail() {
       </div>
 
       {/* 🧾 Bottom Half - Text Section */}
-      <div className="h-1/2 flex flex-col justify-center px-6 p-5 mb[5] text-black rounded-t-lg shadow-inner rounded-md mb-4 bg-white">
+
+      <div className="h-1/2 relative flex flex-col justify-center px-6 p-5 mt-[-50px] text-black rounded-t-3xl shadow-inner  bg-white">
         {/* Name + Rating */}
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between">
           <h1 className="text-3xl font-bold">{data.name}</h1>
           <p className="text-lg font-semibold">⭐ {data.rating}</p>
         </div>
-       
-        
+
         {/* Location */}
         <p className="text-[27px] text-gray-700 mb-2">{data.location}</p>
- <div className="flex gap-4  text-[#D39171]">
-         <img src="/Vector.svg" alt="" className="h-[20px] w-[20px]" />
-         <p>4 Offers Trending</p>
+        <div className="flex gap-4  text-[#D39171]">
+          <img src="/Vector.svg" alt="" className="h-[20px] w-[20px]" />
+          <p>4 Offers Trending</p>
         </div>
         {/* Description */}
         <p className="text-sm text-[16px] mt-[20px] text-gray-600 leading-relaxed">

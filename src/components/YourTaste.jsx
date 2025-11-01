@@ -81,7 +81,7 @@ function YourTaste() {
             <img
               src={item.image}
               alt={item.name}
-              className="w-full h-24 object-cover"
+              className="w-full h-24 fit-content object-cover"
             />
             <div className="p-2">
               <h4 className="text-sm font-semibold text-gray-800">
