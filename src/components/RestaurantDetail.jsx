@@ -31,48 +31,53 @@ function RestaurantDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-w flex flex-col max-w-sm justify-center mx-auto shadow-md rounded-md overflow-hidden">
-      {/*  Top Half - Image Section */}
+    <div className="min-h-screen bg-white flex flex-col max-w-sm mx-auto shadow-md rounded-md overflow-hidden">
+      {/* Top Half - Image Section */}
       <div className="relative w-full">
         {/* Back button */}
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-4 left-4 bg-white/70 text-gray-800 px-3 py-1 rounded-lg hover:bg-white flex items-center gap-2"
+          className="absolute top-3 left-3 bg-white/80 text-gray-800 px-2 py-1 rounded-lg hover:bg-white flex items-center gap-2 z-10"
         >
-          <img src="/back(1).svg" alt="" />
+          <img src="/back(1).svg" alt="Back" className="w-5 h-5" />
         </button>
 
+        {/* Responsive Image */}
         <img
           src={data.image}
           alt={data.name}
-          className="w-full h-[30vw] object-cover"
+          className="w-full h-[50vh] sm:h-[45vh] object-cover"
         />
 
         {/* Fastor logo overlay */}
         <img
           src="/fastor-logo.png"
           alt="Fastor Logo"
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 opacity-80"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 opacity-80"
         />
       </div>
 
-      {/* 🧾 Bottom Half - Text Section */}
-
-      <div className="h-1/2 relative flex flex-col justify-center px-6 p-5 mt-[-50px] text-black rounded-t-3xl shadow-inner  bg-white">
+      {/* Bottom Half - Text Section */}
+      <div className="flex flex-col justify-start px-5 py-6 text-black rounded-t-3xl shadow-inner bg-white mt-[-30px] sm:mt-[-50px] z-20 relative">
         {/* Name + Rating */}
-        <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold">{data.name}</h1>
-          <p className="text-lg font-semibold">⭐ {data.rating}</p>
+        <div className="flex items-center justify-between mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold">{data.name}</h1>
+          <p className="text-base sm:text-lg font-semibold">⭐ {data.rating}</p>
         </div>
 
         {/* Location */}
-        <p className="text-[27px] text-gray-700 mb-2">{data.location}</p>
-        <div className="flex gap-4  text-[#D39171]">
-          <img src="/Vector.svg" alt="" className="h-[20px] w-[20px]" />
-          <p>4 Offers Trending</p>
+        <p className="text-lg sm:text-xl text-gray-700 mb-2">
+          {data.location}
+        </p>
+
+        {/* Offer Section */}
+        <div className="flex items-center gap-3 text-[#D39171] mb-3">
+          <img src="/Vector.svg" alt="" className="h-5 w-5" />
+          <p className="text-sm sm:text-base">4 Offers Trending</p>
         </div>
+
         {/* Description */}
-        <p className="text-sm text-[16px] mt-[20px] text-gray-600 leading-relaxed">
+        <p className="text-sm sm:text-[16px] text-gray-600 leading-relaxed">
           {data.description
             ? data.description
             : "Experience delicious food and a cozy atmosphere at one of the best-rated restaurants in Connaught Place."}
